@@ -1,0 +1,26 @@
+<h1>Listing candidates</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>Ruby course</th>
+    <th>Rails course</th>
+  </tr>
+
+<% @candidates.each do |candidate| %>
+  <tr>
+    <td><%=h candidate.name %></td>
+    <td><%=h candidate.contact %></td>
+    <td><%=h candidate.ruby_course %></td>
+    <td><%=h candidate.rails_course %></td>
+    <td><%= link_to 'Show', candidate %></td>
+    <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
+    <td><%= link_to 'Destroy', candidate, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New candidate', new_candidate_path %>

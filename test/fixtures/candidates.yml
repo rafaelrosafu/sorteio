@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  contact: MyString
+  ruby_course: false
+  rails_course: false
+
+two:
+  name: MyString
+  contact: MyString
+  ruby_course: false
+  rails_course: false

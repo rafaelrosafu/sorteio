@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @candidate.name %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%=h @candidate.contact %>
+</p>
+
+<p>
+  <b>Ruby course:</b>
+  <%=h @candidate.ruby_course %>
+</p>
+
+<p>
+  <b>Rails course:</b>
+  <%=h @candidate.rails_course %>
+</p>
+
+
+<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
+<%= link_to 'Back', candidates_path %>

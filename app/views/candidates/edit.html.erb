@@ -1,0 +1,28 @@
+<h1>Editing candidate</h1>
+
+<% form_for(@candidate) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </p>
+  <p>
+    <%= f.label :ruby_course %><br />
+    <%= f.check_box :ruby_course %>
+  </p>
+  <p>
+    <%= f.label :rails_course %><br />
+    <%= f.check_box :rails_course %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @candidate %> |
+<%= link_to 'Back', candidates_path %>

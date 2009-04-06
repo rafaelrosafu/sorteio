@@ -1,0 +1,35 @@
+  <%= image_tag 'maonamassa.gif', :class => "logo_left"%>
+  <%= image_tag 'logo-br.gif', :class => "logo"%>
+<div class="header">
+    <h3>Sorteio de Workshops<br/>Tempo Real Mão na Massa<br/>Ruby Inside Brasil</h3>
+    <br/>
+
+    <% unless @ruby_winner.nil? and @rails_winner.nil? then %>
+      <span>Vencedor Ruby</span> <b><%= @ruby_winner.name %> - <%= @ruby_winner.contact %></b>
+      <br/>
+      <span>Vencedor Rails</span> <b><%= @rails_winner.name %> - <%= @rails_winner.contact %></b>
+    <% else %>
+      <%= button_to 'Sortear', go_url %>
+    <% end %>
+    <br/>
+</div>
+
+<table id="line_items">
+  <tr>
+    <th>Name</th>
+    <th>Contact</th>
+    <th>Ruby course</th>
+    <th>Rails course</th>
+  </tr>
+
+<% @candidates.each do |candidate| %>
+  <tr>
+    <td><%=h candidate.name %></td>
+    <td><%=h candidate.contact %></td>
+    <td><%=h candidate.ruby_course %></td>
+    <td><%=h candidate.rails_course %></td>
+  </tr>
+<% end %>
+</table>
+
+
