@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090404182339) do
+ActiveRecord::Schema.define(:version => 20090408114824) do
 
   create_table "candidates", :force => true do |t|
     t.string   "name"
@@ -29,5 +29,18 @@ ActiveRecord::Schema.define(:version => 20090404182339) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "tweets", :force => true do |t|
+    t.string   "user"
+    t.integer  "user_id"
+    t.string   "text"
+    t.string   "user_image"
+    t.datetime "posted_at"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tweets", ["user"], :name => "index_tweets_on_user"
 
 end
