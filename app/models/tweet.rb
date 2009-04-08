@@ -67,6 +67,18 @@ class Tweet < ActiveRecord::Base
     self.posted_at = data['created_at']
   end
 
+  def self.list_all_users
+    if Tweet.count > 0
+       y Tweet.all.map(&:user)
+    else
+       puts "No participants for now"
+    end
+  end
+
+  def self.delete_all_tweets
+    all.map { |t| t.destroy }
+  end
+
 private
 
   def self.last_tweet_processed
