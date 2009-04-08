@@ -35,7 +35,7 @@ class Tweet < ActiveRecord::Base
       last_id = last_tweet_processed
 
       puts "fetch_new_tweets(): Fetching tweets from Twitter API, page #{i.to_s}... (Hashtag: #{Hashtag}, last_id: #{last_id.to_s})"
-      tweets = Twitter::Search.new.hashed(Hashtag).since(0).per_page(Tweets_Per_Query).page(i).fetch.results
+      tweets = Twitter::Search.new.hashed(Hashtag).since(last_id).per_page(Tweets_Per_Query).page(i).fetch.results
       puts "fetch_new_tweets(): Fetched #{tweets.size} tweets" unless tweets.nil?
 
       tweets.each {|t| tweets_all.push(t) }
